@@ -1,0 +1,240 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #211613;
+  background: #fff7e8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  background:
+    linear-gradient(90deg, rgba(197, 159, 90, 0.09) 1px, transparent 1px),
+    linear-gradient(180deg, #fff7e8 0%, #f7ead2 50%, #fff7e8 100%);
+  background-size: 72px 72px, auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(197, 159, 90, 0.35);
+}
+
+.jharokha-shell {
+  border: 1px solid rgba(197, 159, 90, 0.84);
+  border-radius: 112px 112px 10px 10px / 150px 150px 10px 10px;
+  clip-path: path("M 116 0 C 174 0 224 34 224 92 L 224 318 L 0 318 L 0 92 C 0 34 58 0 116 0 Z");
+}
+
+.jharokha-shell::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border: 1px solid rgba(197, 159, 90, 0.55);
+  border-radius: 98px 98px 6px 6px / 132px 132px 6px 6px;
+  box-shadow:
+    inset 0 0 0 7px rgba(255, 247, 232, 0.28),
+    inset 0 0 38px rgba(197, 159, 90, 0.13);
+  pointer-events: none;
+}
+
+.jharokha-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.62) 46%, transparent 58%);
+  transform: translateX(-110%);
+  animation: shimmer 5.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.lineage-aura {
+  position: absolute;
+  left: 50%;
+  top: 128px;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(242, 183, 96, 0.46), rgba(197, 159, 90, 0.16) 46%, transparent 72%);
+  animation: lineagePulse 1.7s ease-out both;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.icon-button {
+  display: inline-grid;
+  min-width: 42px;
+  min-height: 42px;
+  place-items: center;
+  border: 1px solid rgba(197, 159, 90, 0.5);
+  background: rgba(255, 247, 232, 0.86);
+  color: #3b2118;
+  box-shadow: 0 14px 40px rgba(59, 33, 24, 0.14);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.icon-button:hover {
+  transform: translateY(-1px);
+  background: #fff;
+}
+
+.icon-button:focus-visible {
+  outline: 2px solid #c59f5a;
+  outline-offset: 2px;
+}
+
+@keyframes lineagePulse {
+  0% {
+    opacity: 0.92;
+    transform: translateX(-50%) scale(0.16);
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(4.4);
+  }
+}
+
+
+
+.hero-paper-texture {
+  background-image:
+    radial-gradient(circle at 12px 18px, rgba(197, 159, 90, 0.14) 1px, transparent 1.5px),
+    radial-gradient(circle at 38px 46px, rgba(59, 33, 24, 0.06) 1px, transparent 1.5px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.28), rgba(197, 159, 90, 0.07), rgba(255, 255, 255, 0.2));
+  background-size: 54px 54px, 78px 78px, auto;
+}
+
+.hero-palace-silhouette {
+  background:
+    linear-gradient(180deg, transparent 4%, rgba(127, 38, 53, 0.08) 100%),
+    linear-gradient(90deg, transparent 0 3%, rgba(127, 38, 53, 0.18) 3% 8%, transparent 8% 10%, rgba(127, 38, 53, 0.14) 10% 18%, transparent 18% 24%, rgba(127, 38, 53, 0.18) 24% 32%, transparent 32% 39%, rgba(127, 38, 53, 0.13) 39% 47%, transparent 47% 55%, rgba(127, 38, 53, 0.16) 55% 64%, transparent 64% 70%, rgba(127, 38, 53, 0.18) 70% 82%, transparent 82% 88%, rgba(127, 38, 53, 0.14) 88% 96%, transparent 96% 100%);
+  clip-path: polygon(0 100%, 0 56%, 4% 56%, 4% 38%, 8% 38%, 8% 56%, 13% 56%, 13% 45%, 18% 45%, 18% 56%, 24% 56%, 24% 30%, 31% 30%, 31% 56%, 39% 56%, 39% 42%, 47% 42%, 47% 56%, 55% 56%, 55% 34%, 63% 34%, 63% 56%, 70% 56%, 70% 40%, 82% 40%, 82% 56%, 88% 56%, 88% 36%, 96% 36%, 96% 56%, 100% 56%, 100% 100%);
+}
+
+.hero-mandala-watermark {
+  filter: sepia(0.35) saturate(1.4) hue-rotate(352deg);
+}
+
+.hero-luxury-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 247, 232, 0.16) 34%, rgba(255, 247, 232, 0.58) 48%, rgba(255, 247, 232, 0.12) 62%, transparent 100%);
+  transform: translateX(-120%);
+  transition: transform 720ms ease;
+}
+
+.hero-luxury-cta:hover::after {
+  transform: translateX(120%);
+}
+
+.hero-jharokha-glow::before {
+  content: "";
+  position: absolute;
+  inset: 8% 7% 7%;
+  border-radius: 999px 999px 28px 28px;
+  background: radial-gradient(circle at 50% 25%, rgba(242, 183, 96, 0.34), transparent 38%), radial-gradient(circle at 50% 70%, rgba(127, 38, 53, 0.14), transparent 48%);
+  filter: blur(18px);
+  animation: heroGlowPulse 5.6s ease-in-out infinite;
+}
+
+@keyframes heroGlowPulse {
+  0%, 100% {
+    opacity: 0.64;
+    transform: scale(0.985);
+  }
+  50% {
+    opacity: 0.98;
+    transform: scale(1.025);
+  }
+}
+.hero-jharokha-breathe {
+  animation: heroJharokhaBreathe 7s ease-in-out infinite;
+}
+
+@keyframes heroJharokhaBreathe {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) scale(1.012);
+  }
+}
+
+.hero-portrait-float {
+  animation: heroPortraitFloat 7s ease-in-out infinite;
+}
+
+.hero-oval-frame {
+  box-shadow:
+    inset 0 0 0 1px rgba(197, 159, 90, 0.45),
+    inset 0 0 60px rgba(242, 183, 96, 0.18),
+    0 38px 110px rgba(59, 33, 24, 0.24);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 62%, rgba(0, 0, 0, 0.9) 72%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 62%, rgba(0, 0, 0, 0.9) 72%, transparent 100%);
+}
+
+.hero-oval-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  border-radius: 999px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 247, 232, 0.86),
+    inset 0 0 0 8px rgba(197, 159, 90, 0.10),
+    inset 0 0 42px rgba(59, 33, 24, 0.12);
+  pointer-events: none;
+}
+
+@keyframes heroPortraitFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) scale(1.01);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+
+
+
