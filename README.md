@@ -1,4 +1,4 @@
-# Royal Rishta Profile
+# Milan Saxena's Biodata
 
 A premium interactive marriage biodata website built with Vite, React, Tailwind CSS, Framer Motion, GSAP, and a custom data-driven Royal Jharokha Lineage System.
 
