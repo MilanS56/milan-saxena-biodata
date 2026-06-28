@@ -1,6 +1,6 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { OrnamentDivider } from "../components/OrnamentDivider";
-const krishnaImage = "/assets/decor/krishna.png";
+const krishnaImage = "/assets/decor/krishna.webp";
 const rangoliOne = "/assets/decor/rangoli1.svg";
 const rangoliTwo = "/assets/decor/rangoli2.svg";
 
@@ -41,6 +41,9 @@ export function AboutSection({ paragraphs }: AboutSectionProps) {
             <img
               src={krishnaImage}
               alt="Lord Krishna blessing artwork"
+              loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 384px, 70vw"
               className="relative z-10 h-[24rem] w-[24rem] object-contain drop-shadow-[0_28px_42px_rgba(59,33,24,0.2)]"
             />
           </motion.div>
@@ -49,3 +52,5 @@ export function AboutSection({ paragraphs }: AboutSectionProps) {
     </section>
   );
 }
+
+

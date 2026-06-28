@@ -1,5 +1,5 @@
 import { ShareActions } from "../components/ShareActions";
-const krishnaImage = "/assets/decor/krishna.png";
+const krishnaImage = "/assets/decor/krishna.webp";
 const rangoliOne = "/assets/decor/rangoli1.svg";
 const rangoliTwo = "/assets/decor/rangoli2.svg";
 import type { ProfileContent } from "../types/family";
@@ -41,6 +41,9 @@ export function ClosingSection({ contact }: ClosingSectionProps) {
           <img
             src={krishnaImage}
             alt="Lord Krishna blessing artwork"
+            loading="lazy"
+            decoding="async"
+            sizes="(min-width: 1024px) 416px, 72vw"
             className="relative z-10 h-[26rem] w-[26rem] object-contain drop-shadow-[0_34px_46px_rgba(59,33,24,0.22)]"
           />
         </div>
@@ -48,4 +51,6 @@ export function ClosingSection({ contact }: ClosingSectionProps) {
     </section>
   );
 }
+
+
 

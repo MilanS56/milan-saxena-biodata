@@ -2,7 +2,7 @@ import type { ProfileContent } from "../types/family";
 
 const slot = (slug: string, fallbackName: string) => {
   void fallbackName;
-  return `/assets/family/${slug}.jpg`;
+  return `/assets/family/${slug}.webp`;
 };
 
 export const profileContent: ProfileContent = {
@@ -41,7 +41,7 @@ export const profileContent: ProfileContent = {
     },
     {
       title: "Fitness & Travel",
-      description: "Morning runs, heritage stays, and slow travel with family.",
+      description: "Workouts, heritage stays, and slow travel with family.",
     },
   ],
   values: [
@@ -111,7 +111,7 @@ export const profileContent: ProfileContent = {
             children: [
               {
                 id: "bua-ji-1-children",
-                name: "Shivangi Saxena (Married) & Abhishek Nath Saxena",
+                name: "Shivangi Saxena (Married) & Abhishek Nath Saxena, & Dheeraj (Son-in-law)",
                 relation: "Bua Ji's Children",
                 image: slot("bua-ji-1-children", "Shivangi Abhishek Saxena"),
                 side: "paternal",
@@ -154,7 +154,7 @@ export const profileContent: ProfileContent = {
                 image: slot("ritik-saxena", "Ritik Saxena"),
                 side: "self",
                 generation: 0,
-                metadata: { imageSlot: "ritik-saxena" },
+                metadata: { profession: "Software Developer", location: "Noida", imageSlot: "ritik-saxena" },
               },
             ],
           },
@@ -425,6 +425,8 @@ export const profileContent: ProfileContent = {
     },
   },
 };
+
+
 
 
 

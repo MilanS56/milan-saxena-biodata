@@ -1,8 +1,8 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ArrowDown, MapPin, Sparkles } from "lucide-react";
 import { useEffect, useRef } from "react";
-const heroPortrait = "/assets/portraits/me.png";
+const heroPortrait = "/assets/portraits/me-hero.webp";
 const rangoliOne = "/assets/decor/rangoli1.svg";
 const rangoliTwo = "/assets/decor/rangoli2.svg";
 import type { ProfileContent } from "../types/family";
@@ -96,6 +96,10 @@ export function HeroSection({ profile }: HeroSectionProps) {
               <img
                 src={heroPortrait}
                 alt={profile.name}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                sizes="(min-width: 1024px) 505px, 90vw"
                 className="h-full w-full scale-[1.04] object-cover object-[50%_34%] saturate-[1.08] contrast-[1.05]"
               />
             </div>
@@ -113,5 +117,7 @@ export function HeroSection({ profile }: HeroSectionProps) {
     </section>
   );
 }
+
+
 
 

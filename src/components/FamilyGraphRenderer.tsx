@@ -4,8 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { OrnamentDivider } from "./OrnamentDivider";
 import type { FamilyMember } from "../types/family";
 
-const jharokhaFrame = "/assets/frames/jharokha.png";
-const familyPreviewImage = "/assets/family/family.jpeg";
+const jharokhaFrame = "/assets/frames/jharokha.webp";
+const familyPreviewImage = "/assets/family/family.webp";
 
 type FamilyGraphRendererProps = {
   root: FamilyMember;
@@ -67,7 +67,7 @@ const wingTitle: Record<Wing, string> = {
   maternal: "Maternal Family Wing",
 };
 
-const imageVariants = [".jpg", ".jpeg", ".png", ".webp"];
+const imageVariants = [".webp", ".jpg", ".jpeg", ".png"];
 
 const fallbackInitials = (name: string) =>
   `https://api.dicebear.com/9.x/initials/svg?seed=${encodeURIComponent(name)}&backgroundColor=f8e7bf,1f5c4a,7f2635&fontFamily=Georgia&fontWeight=600`;
@@ -150,6 +150,8 @@ function FamilyImageModal({
                 <img
                   src={image.src}
                   alt={image.name}
+                  loading="eager"
+                  decoding="async"
                   className="max-h-[72vh] w-full rounded-[1.1rem] object-contain bg-[#f7ecd8]"
                 />
               </div>
@@ -246,6 +248,8 @@ function FamilyJharokhaCard({
         src={jharokhaFrame}
         alt=""
         aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="pointer-events-none absolute inset-0 h-full w-full object-contain drop-shadow-[0_22px_34px_rgba(59,33,24,.22)]"
       />
       <span className={`relative z-10 flex h-full flex-col items-center justify-center ${contentClass[size]}`}>
@@ -260,6 +264,9 @@ function FamilyJharokhaCard({
             alt={`${name} photo slot${member.metadata?.imageSlot ? `: ${member.metadata.imageSlot}` : ""}`}
             title={member.metadata?.imageSlot ? `Photo slot: ${member.metadata.imageSlot}` : name}
             data-attempt="0"
+            loading="lazy"
+            decoding="async"
+            sizes="96px"
             onError={handleImageError}
             className={`${photoClass[size]} rounded-full border-2 border-antique bg-ivory object-cover shadow-gold ring-4 ring-ivory/80 transition duration-300 group-hover/image:scale-[1.04] group-hover/image:shadow-[0_14px_28px_rgba(59,33,24,.24)]`}
           />
@@ -437,6 +444,9 @@ function FamilyHeritageExplorer({
                 <img
                   src={familyPreviewImage}
                   alt="Extended family collage"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 768px) 576px, 92vw"
                   className="h-[18rem] w-full rounded-[1rem] object-cover"
                 />
               </div>
@@ -501,6 +511,8 @@ export function FamilyGraphRenderer({ root }: FamilyGraphRendererProps) {
     </>
   );
 }
+
+
 
 
 
